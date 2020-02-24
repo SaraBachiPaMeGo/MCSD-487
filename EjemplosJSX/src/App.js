@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import PrimeraClase from "./components/PrimeraClase"
 import Deportes from "./components/Deportes"
+import Comics from "./components/Comics/Comics"
 
 function App() {
   
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <PrimeraClase></PrimeraClase> */}
-        <Deportes></Deportes>
+        {/* <Deportes></Deportes> */}
+        <Comics></Comics>
       </header>
     </div>
   );
