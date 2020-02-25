@@ -5,8 +5,12 @@ class Comic extends Component {
       this.props.seleccionarFavorito(this.props.comic);
   };
   borrarComic =()=>{
-      //PARA BORRAR, QUE NECESITO DE ESTE COMIC??
+      //PARA BORRAR, QUE NECESITO EL INDICE 
       this.props.borrarComic(this.props.indice);
+  }
+
+  editarComic = () =>{
+      this.props.editarComic(this.props.comic,this.props.indice)
   }
 
   render() {
@@ -35,6 +39,13 @@ class Comic extends Component {
           }}
         >
           Borrar
+        </button>
+        <button
+          onClick={() => {
+            this.editarComic()
+          }}
+        >
+          Editar 
         </button>
       </div>
     );

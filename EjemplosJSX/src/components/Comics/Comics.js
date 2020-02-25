@@ -30,7 +30,8 @@ class Comics extends Component {
         resumen: "spspspspspsp"
       }
     ],
-    favorito: null
+    favorito: null,
+    edicion: -1
   };
 
   seleccionarFavorito = comic => {
@@ -60,13 +61,51 @@ class Comics extends Component {
     });
   };
 
-  borrarComic= indice =>{
+  borrarComic = indice => {
     var comics = this.state.comics;
-    comics.splice(indice,1);
+    comics.splice(indice, 1);
     this.setState({
       comics: comics
-    }
-    )
+    });
+  };
+
+  editarComic = (comic, i) => {
+    //Dibujar los datos en cada caja
+    document.getElementById("titulo").value = comic.titulo;
+    document.getElementById("descripcion").value = comic.resumen;
+    document.getElementById("imagen").value = comic.img;
+    this.setState({
+      edicion: i
+    });
+  };
+
+  guardarComic = () => {
+    //Indice del elemento que estamos editando
+    var i = this.state.edicion;
+
+    //Necesitamos los comics
+    var comics = this.state.comics;
+
+    //Necesito el comic a editar
+    var editComic = comics[i];
+
+    var titulo = document.getElementById("titulo").value;
+    var descr = document.getElementById("descripcion").value;
+    var img = document.getElementById("imagen").value;
+
+    //Modificamos el comic
+    editComic.titulo = titulo;
+    editComic.img = img;
+    editComic.resumen = descr;
+
+    //Sustituimos el comic por el editado
+    comics[i] = editComic;
+
+    //Cambiamos los estados de comic y edición
+    this.setState({
+      comics: comics,
+      edicion: -1
+    });
   };
 
   render() {
@@ -85,15 +124,28 @@ class Comics extends Component {
           <label>Imagen:</label>
           <input type="text" id="imagen" />
         </div>
-        <button
-          onClick={() => {
-            {
-              this.crearComic();
-            }
-          }}
-        >
-          Nuevo comic
-        </button>
+        
+        {this.state.edicion != -1 ? (
+          <button
+            onClick={() => {
+              {
+                this.guardarComic();
+              }
+            }}
+          >
+            Guardar
+          </button>
+        ): <button
+        onClick={() => {
+          {
+            this.crearComic();
+          }
+        }}
+      >
+        Nuevo comic
+      </button>
+        }
+
         {/* condicion && CODIGO HTML --> if*/}
         {this.state.favorito && (
           <h1>Su comic favorito es: {this.state.favorito.titulo}</h1>
@@ -107,6 +159,7 @@ class Comics extends Component {
               seleccionarFavorito={this.seleccionarFavorito}
               borrarComic={this.borrarComic}
               indice={indice}
+              editarComic={this.editarComic}
             ></Comic>
           );
         })}
