@@ -1,16 +1,44 @@
-import React from "react"
+import React, { Component } from "react";
 
-class Comic extends Component{
-    
-    render(){
-        return(
-        <div className={card}>
-            <img src="img_avatar.png" alt="Avatar" style="width:100%">
-            <div className={container}>
-                <h4><b>John Doe</b></h4>
-                <p>Architect  Engineer</p>
-  </div>
-</div>
-        )
-    }
+class Comic extends Component {
+  marcarFavorito = () => {
+      this.props.seleccionarFavorito(this.props.comic);
+  };
+  borrarComic =()=>{
+      //PARA BORRAR, QUE NECESITO DE ESTE COMIC??
+      this.props.borrarComic(this.props.indice);
+  }
+
+  render() {
+    console.log(this.props.comic);
+    return (
+      <div className="card">
+        <img
+          src={this.props.comic.img}
+          alt="Avatar"
+          style={{ width: "20%", height: "20" }}
+        />
+        <div className="container">
+          <h4>{this.props.comic.titulo}</h4>
+          <p>{this.props.comic.resumen}</p>
+        </div>
+        <button
+          onClick={() => {
+            this.marcarFavorito()
+          }}
+        >
+          Favorito
+        </button>
+        <button
+          onClick={() => {
+            this.borrarComic()
+          }}
+        >
+          Borrar
+        </button>
+      </div>
+    );
+  }
 }
+
+export default Comic;
