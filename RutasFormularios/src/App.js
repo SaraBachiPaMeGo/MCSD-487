@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Menu from "./components/Menu";
+import MenuNumeros from "./components/MenuNumeros";
+import Router from "./Router";
+import Doble from "./components/Doble";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div style={{ float: "left" }}>
+        <Menu></Menu>
+        <MenuNumeros></MenuNumeros>
+      </div>
+      <div style={{ float: "left" }}>
+        {/* Sirve para pintar */}
+        <Router></Router>
+        {/* <h1>Número doble</h1>
+        <Doble numero="4"></Doble> */}
+      </div>
     </div>
   );
 }
