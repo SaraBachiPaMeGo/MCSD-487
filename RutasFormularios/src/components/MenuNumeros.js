@@ -12,6 +12,13 @@ class MenuNumeros extends Component {
     }
   };
 
+  //Existen ciclos de vida dentro de un component
+  //los ciclos de vida indican acciones que se rea-
+  //lizarán en un momento dado a nivel de component
+  //estos métodos comienzan con componentAccion()
+
+  //Qué queremos hacer cuando pase algo a ese componente
+
   render() {
     return (
       <div>
@@ -23,7 +30,7 @@ class MenuNumeros extends Component {
             //Un return por cada dibujo que queramos
             return (
               <li key={indice}>
-                <a key={indice} href={"/doble/" + num}>
+                <a key={indice} href={"/tabla/" + num}>
                   {num}
                 </a>
               </li>

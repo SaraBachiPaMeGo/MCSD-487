@@ -5,6 +5,7 @@ import Menu from "./components/Menu";
 import MenuNumeros from "./components/MenuNumeros";
 import Router from "./Router";
 import Doble from "./components/Doble";
+import Tabla from "./components/Tabla";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Router></Router>
         {/* <h1>Número doble</h1>
         <Doble numero="4"></Doble> */}
+        {/* <Tabla></Tabla> */}
       </div>
     </div>
   );

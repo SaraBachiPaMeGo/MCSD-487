@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Musica from "./components/Musica";
 import Cine from "./components/Cine";
 import Doble from "./components/Doble";
+import Tabla from "./components/Tabla";
 
 class Router extends Component {
   render() {
@@ -15,7 +16,7 @@ class Router extends Component {
           <Route exact path="/musica" component={Musica}></Route>
           <Route exact path="/cine" component={Cine}></Route>
           {/* ahora mismo es opcional el número 
-          <Route exact path="/doble" component={Doble}></Route> */}          
+          <Route exact path="/doble" component={Doble}></Route> */}
           <Route
             exact
             path="/doble/:num"
@@ -23,6 +24,14 @@ class Router extends Component {
               //Recibo el valor dentro de props
               var num = props.match.params.num;
               return <Doble numero={num}></Doble>;
+            }}
+          ></Route>
+          <Route
+            exact
+            path="/tabla/:numero"
+            render={props => {
+              var number = props.match.params.numero;
+              return <Tabla numero={number}></Tabla>;
             }}
           ></Route>
         </Switch>
