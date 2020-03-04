@@ -8,14 +8,18 @@ import Doble from "./components/Doble";
 import Tabla from "./components/Tabla";
 import FormularioUsuario from "./components/FormularioUsuario";
 import FormularioCollatz from "./components/FormularioCollatz";
-import FormularioCajas from "./components/FormularioCajas"
+import FormularioCajas from "./components/FormularioCajas";
+import FormularioElementos from "./components/FormularioElementos";
+import FormularioMultiple from "./components/FormularioMultiple";
 
 
 function App() {
   return (
     <div>
       <div style={{ float: "left" }}>
-        <FormularioCajas></FormularioCajas>
+        <FormularioMultiple></FormularioMultiple>
+        {/* <FormularioElementos></FormularioElementos> */}
+        {/* <FormularioCajas></FormularioCajas> */}
         {/* <FormularioCollatz></FormularioCollatz> */}
         {/* <FormularioUsuario></FormularioUsuario> */}
         {/* <Menu></Menu>
