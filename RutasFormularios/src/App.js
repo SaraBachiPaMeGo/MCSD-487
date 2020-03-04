@@ -11,13 +11,15 @@ import FormularioCollatz from "./components/FormularioCollatz";
 import FormularioCajas from "./components/FormularioCajas";
 import FormularioElementos from "./components/FormularioElementos";
 import FormularioMultiple from "./components/FormularioMultiple";
+import FormularioComics from "./components/FormularioComics";
 
 
 function App() {
   return (
     <div>
       <div style={{ float: "left" }}>
-        <FormularioMultiple></FormularioMultiple>
+        <FormularioComics></FormularioComics>
+        {/* <FormularioMultiple></FormularioMultiple> */}
         {/* <FormularioElementos></FormularioElementos> */}
         {/* <FormularioCajas></FormularioCajas> */}
         {/* <FormularioCollatz></FormularioCollatz> */}
