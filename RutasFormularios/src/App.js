@@ -6,17 +6,19 @@ import MenuNumeros from "./components/MenuNumeros";
 import Router from "./Router";
 import Doble from "./components/Doble";
 import Tabla from "./components/Tabla";
+import FormularioUsuario from "./components/FormularioUsuario";
 
 function App() {
   return (
     <div>
       <div style={{ float: "left" }}>
-        <Menu></Menu>
-        <MenuNumeros></MenuNumeros>
+        <FormularioUsuario></FormularioUsuario>
+        {/* <Menu></Menu>
+        <MenuNumeros></MenuNumeros> */}
       </div>
       <div style={{ float: "left" }}>
         {/* Sirve para pintar */}
-        <Router></Router>
+        {/* <Router></Router> */}
         {/* <h1>Número doble</h1>
         <Doble numero="4"></Doble> */}
         {/* <Tabla></Tabla> */}
