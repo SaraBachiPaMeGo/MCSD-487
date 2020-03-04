@@ -7,12 +7,17 @@ import Router from "./Router";
 import Doble from "./components/Doble";
 import Tabla from "./components/Tabla";
 import FormularioUsuario from "./components/FormularioUsuario";
+import FormularioCollatz from "./components/FormularioCollatz";
+import FormularioCajas from "./components/FormularioCajas"
+
 
 function App() {
   return (
     <div>
       <div style={{ float: "left" }}>
-        <FormularioUsuario></FormularioUsuario>
+        <FormularioCajas></FormularioCajas>
+        {/* <FormularioCollatz></FormularioCollatz> */}
+        {/* <FormularioUsuario></FormularioUsuario> */}
         {/* <Menu></Menu>
         <MenuNumeros></MenuNumeros> */}
       </div>
