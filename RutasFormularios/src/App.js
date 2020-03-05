@@ -12,13 +12,15 @@ import FormularioCajas from "./components/FormularioCajas";
 import FormularioElementos from "./components/FormularioElementos";
 import FormularioMultiple from "./components/FormularioMultiple";
 import FormularioComics from "./components/FormularioComics";
+import FormuValidacion from "./components/FormularioValidacion.js/FormularioValidacion"
 
 
 function App() {
   return (
     <div>
       <div style={{ float: "left" }}>
-        <FormularioComics></FormularioComics>
+        <FormuValidacion></FormuValidacion>
+        {/* <FormularioComics></FormularioComics> */}
         {/* <FormularioMultiple></FormularioMultiple> */}
         {/* <FormularioElementos></FormularioElementos> */}
         {/* <FormularioCajas></FormularioCajas> */}
