@@ -70,7 +70,7 @@ export default class FormularioValidacion extends Component {
               ref={this.nombreREF}
               onChange={this.changeState}
             />
-            {this.validator.message("nombre",this.state.nombre,"required|alpha")}
+            {this.validator.message("nombre",this.state.nombre,"required|alpha_space")}
           </div>
           <div>
             <label htmlFor="edad">Edad:</label>
@@ -80,7 +80,7 @@ export default class FormularioValidacion extends Component {
               ref={this.edadREF}
               onChange={this.changeState}
             />
-            {this.validator.message("edad",this.state.edad,"required")}
+            {this.validator.message("edad",this.state.edad,"required|numeric|min:18,num|max:99,num")}
           </div>
           <div>
             <label htmlFor="email">Email:</label>
@@ -103,7 +103,7 @@ export default class FormularioValidacion extends Component {
               onChange={this.changeState}
             ></textarea>{" "}
            
-
+           {/* _num_space */}
           </div>
           <div>
             <button>Guardar Datos</button>
