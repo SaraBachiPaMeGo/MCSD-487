@@ -3,11 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import Customers from "./components/Customers"
 import Buscar from "./components/BuscarCustomer"
+import Coches from "./components/BuscarCoches"
 
 function App() {
   return (
     <div className="App">
-      <Buscar></Buscar>
+      <Coches></Coches>
+      {/* <Buscar></Buscar> */}
       {/* <Customers></Customers> */}
     </div>
   );
