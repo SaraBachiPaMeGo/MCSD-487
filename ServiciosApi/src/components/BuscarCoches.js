@@ -7,6 +7,7 @@ export default class BuscarCoches extends Component {
 
   state = {
     coches: [],
+    search:[],
     status: false
   };
 
@@ -19,29 +20,29 @@ componentWillMount(){
     var url = Global.urlCoches + request;
     Axios.get(url).then(result => {
       this.setState({
-        coches: result.data
+        coches: result.data,
+        search:result.data
       });
     });
   };
 
   buscarCoches = e => {
     e.preventDefault();
-    var request = "/webresources/coches";
-    var url = Global.urlCoches + request;
     var marca = this.cajamarcaREF.current.value.toLowerCase();
-    var coches = [];
-    Axios.get(url).then(result => {
+    var coches = this.state.coches;
+    //Axios.get(url).then(result => {
       //Todo el contenido de JSON
-      coches = result.data;
+      //coches = result.data;
       //Filtramos por una propiedad del JSON
       var filtro = coches.filter(car =>
         car.marca.toLowerCase().includes(marca)
       );
 
       this.setState({
-        coches: filtro
+        search: filtro
       });
-    });
+    //}
+    //);
   };
 
   render() {
@@ -63,7 +64,7 @@ componentWillMount(){
               <th>Imagen</th>
             </tr>
 
-            {this.state.coches.map((coche, i) => {
+            {this.state.search.map((coche, i) => {
               return (
                 <tr key={i}>
                   <td>{coche.marca}</td>
