@@ -4,7 +4,8 @@ var Global = {
     //Request --> /webresources/coches
     //https://apidepartamentospgs.azurewebsites.net/api/departamentos
     urlDepartamentos: "https://apidepartamentospgs.azurewebsites.net",
-    urlEmpleados : "https://apiempleadosfullstack.azurewebsites.net"
+    urlEmpleados : "https://apiempleadosfullstack.azurewebsites.net",
+    CRUDDepartamentos:"https://apicruddepartamentospgs.azurewebsites.net/"
 };
 
 export default Global;
