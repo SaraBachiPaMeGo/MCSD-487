@@ -31,7 +31,7 @@ export default class Empleados extends Component {
 
   render() {
     return (
-      <div style={{ float: "right" }}>
+      <div>
         <h1>Empleados</h1>
         {this.state.empleados.length > 0 && (
           <table>

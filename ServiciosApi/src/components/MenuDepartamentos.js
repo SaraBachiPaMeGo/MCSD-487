@@ -36,10 +36,15 @@ export default class MenuDepartamentos extends Component {
               {this.state.departamentos.map((departamento, i) => {
                 return (
                   <li key={i}>
-                    <a href="#">{departamento.Nombre}</a>
+                    <a href={"/empleadosdepartamento/" + departamento.Numero}>
+                      {departamento.Nombre}
+                    </a>
                   </li>
                 );
               })}
+              <li>
+                <a href="/buscarcoches">Buscar coches</a>
+              </li>
             </React.Fragment>
           )}
         </ul>
